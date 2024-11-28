@@ -92,7 +92,7 @@ Each relationship is implemented with robust utilities for querying and manipula
 
 ## 📦 Latest Version
 
-- **Version**: 1.0.0  
+- **Version**: 0.1.2  
 - **Release Date**: November 28, 2024
 
 ---
