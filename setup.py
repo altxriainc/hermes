@@ -8,9 +8,9 @@ setup(
     long_description_content_type="text/markdown",
     author="Altxria Inc.",
     author_email="company@altxria.com",
-    url="https://github.com/altxriainc/hermes",  # URL to your repository
-    packages=find_packages(where="src"),  # Look for packages in the src directory
-    package_dir={"": "src"},  # Map the root package directory to src
+    url="https://github.com/altxriainc/hermes",  
+    packages=find_packages(where="src"), 
+    package_dir={"": "src"}, 
     install_requires=[
         "click>=8.0",
         "aiosqlite>=0.17",
@@ -41,7 +41,7 @@ setup(
         "Operating System :: OS Independent",
     ],
     include_package_data=True,
-    license="MIT",
+    license="CC BY-ND 4.0",
     keywords="ORM Python SQL migrations relations caching",
     project_urls={
         "Bug Tracker": "https://github.com/altxriainc/hermes/issues",

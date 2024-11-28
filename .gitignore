@@ -159,6 +159,7 @@ migrations/
 models/
 main.py
 *.db
+.setup.py
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
