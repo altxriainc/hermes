@@ -217,8 +217,8 @@ class MigrationManager:
             raise ValueError("Invalid operation type. Must be 'create', 'update', or 'delete'.")
 
         return f"""
-from src.migrations import CreateTable, DropTable, AlterTable
-from src.fields import IntegerField, StringField, DateTimeField
+from hermes.migrations import CreateTable, DropTable, AlterTable
+from hermes.fields import IntegerField, StringField, DateTimeField
 
 def up():
     \"\"\"Apply the migration.\"\"\"
@@ -268,21 +268,34 @@ def down():
         """
         try:
             self.ensure_migrations_table()
+            
+            # Retrieve executed migrations and handle None case
             executed = self.get_executed_migrations()
+            if executed is None:
+                executed = set()  # Default to an empty set if None
+            
+            # Retrieve migration files and handle None case
             files = self.get_migration_files()
+            if files is None:
+                raise MigrationError("No migration files found in the migrations directory.")
 
+            # Identify new migrations
             new_migrations = [f for f in files if f not in executed]
             if not new_migrations:
                 if self.console_log:
                     print("No migrations to apply.")
                 return
 
+            # Apply new migrations
             connection = self.db.connect_sync()
             batch = self.get_next_batch_number()
             for file in new_migrations:
                 if self.console_log:
                     print(f"Applying migration: {file}")
                 module = self.load_migration(file)
+                if not hasattr(module, 'up'):
+                    raise MigrationError(f"The migration file '{file}' is missing the 'up()' function.")
+                
                 actions = module.up()
                 self.execute_migration(connection, actions)
                 connection.execute(
@@ -293,9 +306,20 @@ def down():
 
             if self.console_log:
                 print("Migrations applied successfully.")
+
+        except MigrationError as e:
+            if self.console_log:
+                print(f"Migration error: {e}")
+            if self.debug_mode:
+                raise
         except HermesException as e:
             if self.console_log:
                 print(f"Error applying migrations: {e}")
+            if self.debug_mode:
+                raise
+        except Exception as e:
+            if self.console_log:
+                print(f"An unexpected error occurred: {e}")
             if self.debug_mode:
                 raise
 

@@ -1,6 +1,6 @@
 {
     "database_path": "test.db",
     "migrations_dir": "migrations",
-    "debug": false,
+    "debug": true,
     "console_log": "False"
 }
