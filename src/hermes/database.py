@@ -1,8 +1,8 @@
 import sqlite3
 import aiosqlite
 import logging
-from src.config import get_config
-from src.exceptions import DatabaseConnectionError, QueryExecutionError, CacheError
+from hermes.config import get_config
+from hermes.exceptions import DatabaseConnectionError, QueryExecutionError, CacheError
 
 # Load configuration
 config = get_config()

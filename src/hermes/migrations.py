@@ -1,10 +1,10 @@
 import os
 import datetime
 import importlib.util
-from src.database import DatabaseConnection
-from src.fields import Field
-from src.config import get_config
-from src.exceptions import MigrationError, HermesException
+from hermes.database import DatabaseConnection
+from hermes.fields import Field
+from hermes.config import get_config
+from hermes.exceptions import MigrationError, HermesException
 
 # Load configuration
 config = get_config()

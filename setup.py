@@ -7,24 +7,25 @@ setup(
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
     author="Altxria Inc.",
-    author_email="company@altxria.com", 
-    url="https://github.com/altxriainc/hermes",  # GitHub repo URL
-    packages=find_packages(),
+    author_email="company@altxria.com",
+    url="https://github.com/altxriainc/hermes",  # URL to your repository
+    packages=find_packages(where="src"),  # Look for packages in the src directory
+    package_dir={"": "src"},  # Map the root package directory to src
     install_requires=[
-        "click>=8.0",       # CLI support
-        "aiosqlite>=0.17",  # Async SQLite database access
+        "click>=8.0",
+        "aiosqlite>=0.17",
     ],
     extras_require={
         "dev": [
-            "pytest>=7.0",   # For testing
-            "black>=23.0",   # Code formatter
-            "flake8>=6.0",   # Linter
+            "pytest>=7.0",
+            "black>=23.0",
+            "flake8>=6.0",
         ]
     },
     python_requires=">=3.7",
     entry_points={
         "console_scripts": [
-            "hermes=src.cli:cli",  # Define the `hermes` command
+            "hermes=hermes.cli:cli",  # Entry point for the CLI
         ],
     },
     classifiers=[
@@ -43,8 +44,8 @@ setup(
     license="MIT",
     keywords="ORM Python SQL migrations relations caching",
     project_urls={
-        "Bug Tracker": "https://github.com/altxriainc/hermes/issues",  # Issue tracker URL
-        "Documentation": "https://github.com/altxriainc/hermes/wiki",  # Documentation URL
-        "Source Code": "https://github.com/altxriainc/hermes",         # Repository URL
+        "Bug Tracker": "https://github.com/altxriainc/hermes/issues",
+        "Documentation": "https://github.com/altxriainc/hermes/wiki",
+        "Source Code": "https://github.com/altxriainc/hermes",
     },
 )

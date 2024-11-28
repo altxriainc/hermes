@@ -1,8 +1,8 @@
 import click
-from src.database import DatabaseConnection
-from src.migrations import MigrationManager
-from src.config import get_config, update_config
-from src.exceptions import (
+from hermes.database import DatabaseConnection
+from hermes.migrations import MigrationManager
+from hermes.config import get_config, update_config
+from hermes.exceptions import (
     DatabaseConnectionError,
     MigrationError,
     HermesException,

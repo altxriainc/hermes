@@ -1,6 +1,6 @@
 import logging
-from src.config import get_config
-from src.exceptions import RelationError
+from hermes.config import get_config
+from hermes.exceptions import RelationError
 
 # Load configuration
 config = get_config()

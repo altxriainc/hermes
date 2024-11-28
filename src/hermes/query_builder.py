@@ -1,6 +1,6 @@
 import logging
-from src.config import get_config
-from src.exceptions import QueryBuilderError, HermesException
+from hermes.config import get_config
+from hermes.exceptions import QueryBuilderError, HermesException
 
 # Load configuration
 config = get_config()

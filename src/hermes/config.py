@@ -1,6 +1,6 @@
 import json
 import os
-from src.exceptions import HermesException, ConfigurationError
+from hermes.exceptions import HermesException, ConfigurationError
 
 DEFAULT_CONFIG = {
     "debug": False,
