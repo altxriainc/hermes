@@ -156,6 +156,7 @@ cython_debug/
 
 #Test
 migrations/
+models/
 main.py
 *.db
 
