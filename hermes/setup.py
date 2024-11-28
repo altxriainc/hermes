@@ -1,14 +1,14 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="hermes",
+    name="hermes-orm",
     version="0.1.0",
     description="A high-performance ORM for Python with support for migrations, relations, and caching.",
-    long_description=open("README.md").read(),
+    long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
-    author="Your Name",
-    author_email="your.email@example.com",
-    url="https://github.com/yourusername/hermes",  # Replace with your GitHub repo URL
+    author="Altxria Inc.",
+    author_email="company@altxria.com", 
+    url="https://github.com/altxriainc/hermes",  # GitHub repo URL
     packages=find_packages(),
     install_requires=[
         "click>=8.0",       # CLI support
@@ -43,8 +43,8 @@ setup(
     license="MIT",
     keywords="ORM Python SQL migrations relations caching",
     project_urls={
-        "Bug Tracker": "https://github.com/yourusername/hermes/issues",  # Replace with your issue tracker
-        "Documentation": "https://github.com/yourusername/hermes/wiki",  # Replace with your documentation URL
-        "Source Code": "https://github.com/yourusername/hermes",         # Replace with your repository URL
+        "Bug Tracker": "https://github.com/altxriainc/hermes/issues",  # Issue tracker URL
+        "Documentation": "https://github.com/altxriainc/hermes/wiki",  # Documentation URL
+        "Source Code": "https://github.com/altxriainc/hermes",         # Repository URL
     },
 )
