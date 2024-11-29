@@ -1,10 +1,10 @@
 import os
 import datetime
 import importlib.util
-from hermes.database import DatabaseConnection
-from hermes.fields import Field
-from hermes.config import get_config
-from hermes.exceptions import MigrationError, HermesException
+from .database import DatabaseConnection
+from .fields import Field
+from .config import get_config
+from .exceptions import MigrationError, HermesException
 
 # Load configuration
 config = get_config()
@@ -217,8 +217,8 @@ class MigrationManager:
             raise ValueError("Invalid operation type. Must be 'create', 'update', or 'delete'.")
 
         return f"""
-from hermes.migrations import CreateTable, DropTable, AlterTable
-from hermes.fields import IntegerField, StringField, DateTimeField
+from altxria.hermes.migrations import CreateTable, DropTable, AlterTable
+from altxria.hermes.fields import IntegerField, StringField, DateTimeField
 
 def up():
     \"\"\"Apply the migration.\"\"\"

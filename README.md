@@ -38,8 +38,8 @@ pip install hermes-orm
 Define models that represent your database structure:
 
 ```python
-from hermes.model import BaseModel
-from hermes.fields import IntegerField, StringField, ForeignKeyField
+from altxria.hermes.model import BaseModel
+from altxria.hermes.fields import IntegerField, StringField, ForeignKeyField
 
 class User(BaseModel):
     id = IntegerField(primary_key=True)
@@ -92,8 +92,9 @@ Each relationship is implemented with robust utilities for querying and manipula
 
 ## 📦 Latest Version
 
-- **Version**: 0.1.2  
+- **Version**: 0.1.7  
 - **Release Date**: November 28, 2024
+- **Latest Release Date**: November 29, 2024
 
 ---
 

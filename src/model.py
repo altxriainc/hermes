@@ -1,14 +1,14 @@
 import logging
-from hermes.fields import Field
-from hermes.relations import (
+from .fields import Field
+from .relations import (
     MorphMany, MorphOne, Relation, ForeignKey,
     OneToOne, OneToMany, ManyToMany
 )
-from hermes.query_builder import QueryBuilder
-from hermes.exceptions import (
+from .query_builder import QueryBuilder
+from .exceptions import (
     RelationNotFound, FieldValidationError, ModelNotFound, HermesException
 )
-from hermes.config import get_config
+from .config import get_config
 
 # Load configuration
 config = get_config()

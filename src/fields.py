@@ -1,5 +1,5 @@
-from hermes.config import get_config
-from hermes.exceptions import FieldValidationError
+from .config import get_config
+from .exceptions import FieldValidationError
 
 # Load configuration
 config = get_config()

@@ -2,15 +2,19 @@ from setuptools import setup, find_packages
 
 setup(
     name="hermes-orm",
-    version="0.1.2",
+    version="0.1.7",
     description="A high-performance ORM for Python with support for migrations, relations, and caching.",
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
     author="Altxria Inc.",
     author_email="company@altxria.com",
-    url="https://github.com/altxriainc/hermes",  
-    packages=find_packages(where="src"), 
-    package_dir={"": "src"}, 
+    url="https://github.com/altxriainc/hermes",
+    packages=[
+        "altxria.hermes"  
+    ],
+    package_dir={
+        "altxria.hermes": "src"  
+    },
     install_requires=[
         "click>=8.0",
         "aiosqlite>=0.17",
@@ -25,7 +29,7 @@ setup(
     python_requires=">=3.7",
     entry_points={
         "console_scripts": [
-            "hermes=hermes.cli:cli",  # Entry point for the CLI
+            "hermes=altxria.hermes.cli:cli",  # CLI entry point
         ],
     },
     classifiers=[
